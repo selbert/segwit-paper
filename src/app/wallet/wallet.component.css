@@ -1,0 +1,16 @@
+.container {
+    display: block;
+    clear: both;
+}
+.wallet-container {
+    position: absolute;
+    display: block;
+    margin-bottom: 1em;
+    border: 1px solid black;
+}
+.public-part {
+    float: left;
+}
+.private-part {
+    float: right;
+}

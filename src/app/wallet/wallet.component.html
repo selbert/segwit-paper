@@ -1,0 +1,21 @@
+<div class="container">
+    bech
+    <input type="checkbox" formControlName="toggle" [checked]="address.bech" (change)="address.bech = !address.bech">
+    Toggle: {{address.bech==true?'true':'false'}}
+    <div class="wallet-container">
+        <div class="public-part">
+            <div class="address" *ngIf="!address.bech">
+                Address {{ address.address }}<br/>
+                <qr-code [value]=address.address [size]="150"></qr-code>
+            </div>
+            <div class="address" *ngIf="address.bech">
+                Bech address {{ address.bechAddress }}<br/>
+                <qr-code [value]=address.bechAddress [size]="150"></qr-code>
+            </div>
+        </div>
+        <div class="private-part">
+            Private Key {{ address.wifPrivateK }}<br/>
+            <qr-code [value]=address.wifPrivateK [size]="150"></qr-code>
+        </div>
+    </div>
+</div>
