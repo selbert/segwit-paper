@@ -1,21 +1,24 @@
-<div class="container">
-    bech
-    <input type="checkbox" formControlName="toggle" [checked]="address.bech" (change)="address.bech = !address.bech">
-    Toggle: {{address.bech==true?'true':'false'}}
-    <div class="wallet-container">
-        <div class="public-part">
-            <div class="address" *ngIf="!address.bech">
-                Address {{ address.address }}<br/>
-                <qr-code [value]=address.address [size]="150"></qr-code>
-            </div>
-            <div class="address" *ngIf="address.bech">
-                Bech address {{ address.bechAddress }}<br/>
-                <qr-code [value]=address.bechAddress [size]="150"></qr-code>
-            </div>
+<div class="row wallet-container">
+    <div class="public-part col-sm-6">
+        <div class="address" *ngIf="!address.bech">
+            <qr-code [value]=address.address [size]="150"></qr-code><br/>
+            {{ address.address }}
         </div>
-        <div class="private-part">
-            Private Key {{ address.wifPrivateK }}<br/>
-            <qr-code [value]=address.wifPrivateK [size]="150"></qr-code>
+        <div class="address" *ngIf="address.bech">
+            <qr-code [value]=address.bechAddress [size]="150"></qr-code><br/>
+            {{ address.bechAddress }}
         </div>
+    </div>
+    <div class="private-part col-sm-6">
+        <div class="address">
+            <qr-code [value]=address.wifPrivateK [size]="150"></qr-code><br/>
+            {{ address.wifPrivateK }}<br/>
+        </div>
+    </div>
+</div>
+<div class="row  d-print-none">
+    <div class="col-sm-5">
+        <input type="checkbox" formControlName="toggle" [checked]="address.bech" (change)="address.bech = !address.bech">
+        Use bech32 address
     </div>
 </div>

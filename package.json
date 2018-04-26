@@ -23,6 +23,7 @@
     "@angular/router": "^5.0.0",
     "angular2-qrcode": "^2.0.1",
     "bitcoinjs-lib": "^3.3.1",
+    "bootstrap": "^4.0.0-beta.2",
     "core-js": "^2.4.1",
     "more-entropy": "0.0.7",
     "rxjs": "^5.5.2",

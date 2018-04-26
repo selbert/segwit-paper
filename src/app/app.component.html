@@ -1,9 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <ul>
-    <li *ngFor="let address of addresses; let i = index"> 
-      <wallet [address]=address></wallet>
-    </li>
-  </ul>
-  <button (click)="addAddress()">Add Address</button>
+<div class="navbar navbar-dark bg-dark d-print-none">
+    <a class="navbar-brand" href="#">Segwit Paper Wallets</a>
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="addAddress()">Add Address</button>
+</div>
+<div class="container">
+  <wallet *ngFor="let address of addresses; let i = index" [address]=address></wallet>
+</div>
+<div *ngIf="loadingAddress" class="entropy-overlay d-flex align-items-center h100">
+  <div class="container">
+    <div class="row">
+      <div class="col align-self-center text-center entropy-loading text-uppercase">Loading Entropy</div>
+    </div>
+  </div>
 </div>

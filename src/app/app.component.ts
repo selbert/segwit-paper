@@ -12,9 +12,10 @@ import { address } from 'bitcoinjs-lib';
 export class AppComponent {
   addresses:Address[];
   subscription:Subscription;
+  loadingAddress:Boolean;
 
   constructor(private _addressService: AddressService){
-   
+    this.loadingAddress=false;
   }
 
   ngOnInit() {
@@ -23,9 +24,11 @@ export class AppComponent {
   }
 
   addAddress() {
+    this.loadingAddress=true
     this.subscription = this._addressService.getNewAddress().subscribe(
       u => {
         this.addresses.push(u)
+        this.loadingAddress=false
       });
   }
 

@@ -1,16 +1,26 @@
-.container {
-    display: block;
-    clear: both;
+.obfuscation {
+    background-color: black;
 }
+
+.address {
+    text-align: center;
+    word-wrap: break-word;
+    padding-top: 15px;
+}
+
 .wallet-container {
-    position: absolute;
-    display: block;
-    margin-bottom: 1em;
-    border: 1px solid black;
+    border: solid 1px black;
 }
+
 .public-part {
-    float: left;
+    border-right: 1px dotted black;
+    padding-bottom: 15px;
 }
+
 .private-part {
-    float: right;
+    padding-bottom: 15px;
+}
+
+.row {
+    margin-top: 1rem;
 }
